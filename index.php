@@ -11,6 +11,8 @@ $table_pool_template = 4;
 $table_game_event = 5;
 $table_creature_equip_template = 6;
 $table_trinity_string = 7;
+$table_creature_template = 8;
+$table_gameobject_template = 9;
 
 $table_creature_sel =
 $table_gameobject_sel =
@@ -18,6 +20,8 @@ $table_waypoint_scripts_sel =
 $table_pool_template_sel =
 $table_game_event_sel =
 $table_creature_equip_template_sel =
+$table_creature_template_sel =
+$table_gameobject_template_sel =
 $table_trinity_string_sel = "";
 
 global $dbs;
@@ -74,6 +78,17 @@ if (isset($_GET['table']) && $_GET['table'] != "") {
             $param = "entry";
             $table_trinity_string_sel = "selected";
             break;
+        case $table_creature_template:
+            $table = "creature_template";
+            $param = "entry";
+            $table_creature_template_sel = "selected";
+            break;
+
+        case $table_gameobject_template:
+            $table = "gameobject_template";
+            $param = "entry";
+            $table_gameobject_template_sel = "selected";
+            break;
     }
 }
 
@@ -124,6 +139,8 @@ $continuous_checked = $continuous ? "checked" : "";
                 <option value="<?= $table_game_event ?>"<?= $table_game_event_sel ?>>`game_event`</option>
                 <option value="<?= $table_creature_equip_template ?>"<?= $table_creature_equip_template_sel ?>>`creature_equip_template`</option>
                 <option value="<?= $table_trinity_string ?>"<?= $table_trinity_string_sel ?>>`trinity_string`</option>
+                <option value="<?= $table_creature_template ?>"<?= $table_creature_template_sel ?>>`creature_template`</option>
+                <option value="<?= $table_gameobject_template ?>"<?= $table_gameobject_template_sel ?>>`gameobject_template`</option>
             </select>
         </div>
         <div class="form-group">
